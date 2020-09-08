@@ -27,7 +27,7 @@
 * ```
 */
 resource "proxmox_vm_qemu" "this" {
-  for_each = var.proxmox_vms
+  for_each = local.merged_vms
 
   name = format("%s.%s", lower(each.key), lower(each.value["domain"]))
   desc = each.value["description"]

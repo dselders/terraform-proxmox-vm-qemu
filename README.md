@@ -39,7 +39,8 @@ No requirements.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| proxmox\_vms | VMs definitions | <pre>map(object({<br>    domain      = string<br>    description = string<br>    target_node = string<br>    clone       = string<br>    agent       = bool<br>    cores       = string<br>    memory      = string<br>    disk_size   = string<br>    storage     = string<br>    ip_address  = string<br>    gateway     = string<br>    ssh_key     = string<br>  }))</pre> | n/a | yes |
+| proxmox\_vms | VMs definitions | `map(any)` | n/a | yes |
+| vm\_defaults | VM defaults | <pre>object({<br>    agent     = bool<br>    bios      = string<br>    boot      = string<br>    cores     = string<br>    cpu       = string<br>    disk_size = string<br>    memory    = string<br>    sockets   = string<br>    storage   = string<br>  })</pre> | <pre>{<br>  "agent": false,<br>  "bios": "seabios",<br>  "boot": "cdn",<br>  "cores": "1",<br>  "cpu": "host",<br>  "disk_size": "8",<br>  "memory": "512",<br>  "sockets": "1",<br>  "storage": "local-lvm"<br>}</pre> | no |
 
 ## Outputs
 
